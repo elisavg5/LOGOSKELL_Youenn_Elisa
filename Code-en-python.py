@@ -68,7 +68,7 @@ SVG.write('<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2
 
 
 for i in range (len(X)-1) :
-    SVG.write('<line x1='+str(X[i])+' y1='+str(Y[i])+' x2='+str(X[i+1])+' y2='+str(Y[i+1])+' stroke="red" />\n')
+    SVG.write('<line x1="'+str(X[i])+'" y1="'+str(Y[i])+'" x2="'+str(X[i+1])+'" y2="'+str(Y[i+1])+'" stroke="red" />\n')
 
 SVG.write('</svg>')
 
