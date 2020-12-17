@@ -36,7 +36,7 @@ add (x:xs) out s = case x of
 lgSvg :: [(Float,Float)] -> (Float,Float) -> [[Char]] -> [[Char]]
 lgSvg [] _ _ = []
 lgSvg (x:xs) (cx,cy) _ = 
-   t ++ lgSvg xs (nx,ny) t
+   t ++ lgSvg xs (nx,ny) t  -- Création du point suivant en ajoutant le point précédant avec le vecteur suivant
    where nx = cx + fst x 
          ny = cy + snd x
          t = [concat["<line x1=\"", show(cx) , "\" y1=\"", show(cy),"\" x2=\"", show(nx), "\" y2=\"", show(ny), "\" stroke=\"red\" />\n"]]
