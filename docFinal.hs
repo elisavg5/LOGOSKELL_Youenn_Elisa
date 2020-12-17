@@ -40,7 +40,7 @@ lgSvg (x:xs) (cx,cy) _ =
          ny = cy + snd x
          t = [concat["<line x1=\"", show(cx) , "\" y1=\"", show(cy),"\" x2=\"", show(nx), "\" y2=\"", show(ny), "\" stroke=\"red\" />\n"]]
 
--- fonction qui transforme la liste des traits au format liste de String,  en une seule String 
+-- fonction qui prend une liste de liste de chaîne de caractères et qui renvoie une liste contenant la chaîne de caractère composée de toutes les chaînes de caractères
 decomplist :: [[Char]] -> [Char] -> [Char]
 decomplist [] a = a
 decomplist (x:xs) s = 
