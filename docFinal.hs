@@ -41,18 +41,18 @@ lgSvg (x:xs) (cx,cy) _ =
          t = [concat["<line x1=\"", show(cx) , "\" y1=\"", show(cy),"\" x2=\"", show(nx), "\" y2=\"", show(ny), "\" stroke=\"red\" />\n"]]
 
 -- fonction qui prend une liste de liste de chaîne de caractères et qui renvoie une liste contenant la chaîne de caractère composée de toutes les chaînes de caractères
-decomplist :: [[Char]] -> [Char] -> [Char]
-decomplist [] a = a
-decomplist (x:xs) s = 
-    s ++ x ++ decomplist xs s 
+compr :: [[Char]] -> [Char] -> [Char]
+compr [] a = a
+compr (x:xs) s = 
+    s ++ x ++ compr xs s 
 
 -- fonction qui rajoute l'en tête et le bas de page du code xlm
-buildfile :: [Char] -> String
-buildfile a = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"500\" height=\"500\">\n<title>Exemple</title>\n"++a++"</svg>"        
+entBp :: [Char] -> String
+entBp a = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"500\" height=\"500\">\n<title>Exemple</title>\n"++a++"</svg>"        
 
 main = do
      --Recuperation des instructions logoskell du fichier txt
      texte <- readFile "logoskell.txt"
      
      -- ecriture du code SVG dans un fichier txt
-     writeFile "SVG.txt" (buildfile (decomplist (lgSvg (add (read texte :: [Instruction]) [] 0) (250, 250) [""]) ""))
+     writeFile "SVG.txt" (entBp (compr (lgSvg (add (read texte :: [Instruction]) [] 0) (250, 250) [""]) ""))
