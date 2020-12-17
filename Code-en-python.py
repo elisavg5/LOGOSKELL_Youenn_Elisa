@@ -1,7 +1,7 @@
 from math import *
 from pylab import *
 
-LS = open("/home/elisa/Documents/TC3/ELP/HASKELL/Projeeet/logoskell.txt", "r")
+LS = open("C:/Users/youen/Documents/Ecole/INSA/3TC/ELP/2Haskell/LogoSkell.txt", "r")
 
 
 def FtLm (t) :     #Crée une liste ordonnée composée des mots et des crochets du fichier
@@ -62,7 +62,7 @@ X,Y = pos(LS)
 print (X,Y)
 
 
-SVG = open("/home/elisa/Documents/TC3/ELP/HASKELL/Projeeet/logoskell.txt", "w")
+SVG = open("C:/Users/youen/Documents/Ecole/INSA/3TC/ELP/2Haskell/SVG.txt", "w")
 
 SVG.write('<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="200">\n<title>Exemple</title>\n')
 
