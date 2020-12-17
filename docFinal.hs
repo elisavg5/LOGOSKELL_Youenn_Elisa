@@ -31,8 +31,7 @@ add (x:xs) out s = case x of
     -- on ajoute au début de la liste des instructions i fois les instructions extraites du repeat
         where rep = (take ((length j) * i) (cycle j)) ++ xs
 
--- fonction qui retourne la liste de traits au format xml/svg au format liste de String
--- Cette fonction prends en entrée la liste des deplacements du crayon restants à effectuer, la position courante du crayon (cx,cy), et la liste des traits déjà ecrits au format SVG
+-- fonction écrit les lignes des instructions de tracés en SGV à partir des vecteurs calculés
 lgSvg :: [(Float,Float)] -> (Float,Float) -> [[Char]] -> [[Char]]
 lgSvg [] _ _ = []
 lgSvg (x:xs) (cx,cy) _ = 
