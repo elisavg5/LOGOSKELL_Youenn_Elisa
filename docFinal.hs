@@ -56,4 +56,4 @@ main = do
      texte <- readFile "logoskell.txt"
      
      -- composition de toutes les précédentes fonctions 
-     hPutStr stdout (buildfile (decomplist (lgSvg (add (read texte :: [Instruction]) [] 0) (250, 250) [""]) "")
+     hPutStr stdout (buildfile (decomplist (lgSvg (add (read texte :: [Instruction]) [] 0) (250, 250) [""]) ""))
