@@ -1,5 +1,4 @@
 import System.IO
-import Control.Monad ()
 import Data.Char ()
 
 -- Création d'un type spécial pour les instructions
