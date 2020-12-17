@@ -55,5 +55,5 @@ main = do
      --Recuperation des instructions logoskell du fichier txt
      texte <- readFile "logoskell.txt"
      
-     -- composition de toutes les précédentes fonctions 
+     -- ecriture du code SVG dans un fichier txt
      writeFile "SVG.txt" (buildfile (decomplist (lgSvg (add (read texte :: [Instruction]) [] 0) (250, 250) [""]) ""))
